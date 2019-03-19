@@ -1,0 +1,1 @@
+# ORETECH Child Theme
