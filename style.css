@@ -11,24 +11,3 @@ Text Domain:  yootheme-child-theme
 */
 
 /* Write here your own personal stylesheet */
-
-    @font-face{
-        font-family:"Sofia Pro Regular";
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Regular.eot?#iefix");
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Regular.eot?#iefix") format("eot"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Regular.woff2") format("woff2"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Regular.woff") format("woff"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Regular.ttf") format("truetype");
-    }
-    @font-face{
-        font-family:"Sofia Pro Bold";
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Bold.eot?#iefix");
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Bold.eot?#iefix") format("eot"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Bold.woff2") format("woff2"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Bold.woff") format("woff"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-Bold.ttf") format("truetype");
-    }
-    @font-face{
-        font-family:"Sofia Pro Regular Italic";
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-RegularItalic.eot?#iefix");
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-RegularItalic.eot?#iefix") format("eot"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-RegularItalic.woff2") format("woff2"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-RegularItalic.woff") format("woff"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-RegularItalic.ttf") format("truetype");
-    }
-    @font-face{
-        font-family:"Sofia Pro Bold Italic";
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-BoldItalic.eot?#iefix");
-        src:url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-BoldItalic.eot?#iefix") format("eot"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-BoldItalic.woff2") format("woff2"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-BoldItalic.woff") format("woff"),url("/wp-content/themes/yootheme-child-theme/fonts/SofiaW03-BoldItalic.ttf") format("truetype");
-    }

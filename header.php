@@ -44,7 +44,7 @@ if ($site['layout'] == 'boxed') {
     <body <?php body_class($theme->get('body_class')->all()) ?>>
         <?php if (strpos($theme->get('header.layout'), 'offcanvas') === 0 || $theme->get('mobile.animation') == 'offcanvas') : ?>
 		<!-- Start rincuncg heading -->
-		<?php require_once(get_stylesheet_directory().'/heading.php');?>
+		<?php require_once('rincuncg/heading.php');?>
 		<!-- End rincuncg heading -->
         <div class="uk-offcanvas-content">
         <?php endif ?>

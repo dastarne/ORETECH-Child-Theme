@@ -1,0 +1,50 @@
+.container_12
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100*;
+  zoom: 1;
+}
+
+.grid_2,
+.grid_3,
+.grid_7,
+.grid_9
+{
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.container_12 .grid_2 {
+  width: 140px;
+}
+
+.container_12 .grid_3
+{
+  width: 220px;
+}
+
+.container_12 .grid_7 {
+  width: 540px;
+}
+
+.container_12 .grid_9{
+  width: 700px;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.option_row
+{
+	padding:10px;
+	border-bottom:1px dashed #c1c1c1;
+}
