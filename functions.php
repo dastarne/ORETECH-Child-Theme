@@ -63,11 +63,13 @@ __FILE__,
 );
 
 
-
-
-//Optional for theme updater: Set the branch that contains the desired release release. This should be set to Beta on beta sites
-
-$myUpdateChecker->setBranch('beta');
+$url = get_site_url();
+if(substr( parse_url($url, PHP_URL_HOST), 0, 4) == "beta"){
+	//Optional for theme updater: Set the branch that contains the desired release release. This should be set to Beta on beta sites
+	$myUpdateChecker->setBranch('beta');		
+} else {
+	$myUpdateChecker->setBranch('master');
+}
 
 /* End ORETECH custom styling/scripts */
 
