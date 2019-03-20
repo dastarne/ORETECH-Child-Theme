@@ -49,6 +49,28 @@ add_action( 'wp_enqueue_scripts', 'yootheme_child_theme_enqueue_child_styles' );
 	}
 add_action( 'wp_enqueue_scripts', 'uncgwp_scripts' );
 
+// Theme updater useing Plugin-update-checker and Github
+
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	
+	'https://github.com/dastarne/ORETECH-Child-Theme',
+	
+__FILE__,
+
+	'yootheme-child-theme'
+
+);
+
+
+$url = get_site_url();
+if(substr( parse_url($url, PHP_URL_HOST), 0, 4) == "beta"){
+	//Optional for theme updater: Set the branch that contains the desired release release. This should be set to Beta on beta sites
+	$myUpdateChecker->setBranch('beta');		
+} else {
+	$myUpdateChecker->setBranch('master');
+}
+
 /* End ORETECH custom styling/scripts */
 
 /* UNCG Google Analytics Tracking ID */
