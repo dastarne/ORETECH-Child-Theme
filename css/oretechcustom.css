@@ -139,12 +139,10 @@ li{
     -khtml-text-shadow: 0px 0px 7px #000;
 }	
 .homepage-promo .wk-h1{
-	font-size:25px;
 	margin-bottom:0px;
 	line-height:1;
 }
 .homepage-promo .wk-h2{
-	font-size:18px;
 	font-family: Pluto Sans;
 	margin-top: 0px;
 }
@@ -168,14 +166,6 @@ li{
 
 /* Breakpoint specific styles - Yootheme Breakpoints set to L-992px M-768px S-480px */
 
-@media (min-width:480px){
-	.homepage-promo .wk-h1{
-		font-size:35px;
-	}
-	.homepage-promo .wk-h2{
-		font-size:20px;	
-	}		
-}
 @media (min-width: 992px){
     .tm-page {width: 970px!important;
     }
@@ -192,12 +182,6 @@ li{
 	}
 	#google_translate_element{
 		text-align:center!important;
-	}
-	.homepage-promo .wk-h1{
-		font-size:45px;
-	}
-	.homepage-promo .wk-h2{
-		font-size:25px;	
 	}
 }
 @media (max-width: 991px) {
