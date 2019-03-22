@@ -129,7 +129,7 @@ li{
 
 /* Homepage Promo Slider/Static Image */
 
-.homepage-promo .wk-h1, .homepage-promo .wk-h2,.homepage-promo .wk-h3{
+.homepage-promo .wk-h1, .homepage-promo .wk-h2,.homepage-promo .wk-h3,.homepage-promo .wk-h4,.homepage-promo .wk-h5{
 	-webkit-text-shadow: 0px 0px 7px #000;
     -text-shadow: 0px 0px 7px #000;
     text-shadow: 0px 0px 7px #000;
@@ -146,10 +146,20 @@ li{
 	font-family: Pluto Sans;
 	margin-top: 0px;
 }
+.homepage-promo .wk-h4{
+	margin-top: 0px;
+}
+.homepage-promo .wk-h5{
+	margin-top: 0px;
+}
 .homepage-promo .wk-overlay-panel{
 	padding: 35px 15px;
 }
 
+/* Widget Kit */
+.wk-h4, .wk-h5{
+	text-transform:none;
+}
 
 /* Department Footer */
 .dept-footer{
