@@ -12,6 +12,11 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  yootheme-child-theme
 */
 
+
+/* Fixes letter spacing between F & I,L */
+body{
+	font-variant-ligatures:none;
+}
 /* Page and Containers */
 
 .tm-page {
@@ -129,7 +134,7 @@ li{
 
 /* Homepage Promo Slider/Static Image */
 
-.homepage-promo .wk-h1, .homepage-promo .wk-h2,.homepage-promo .wk-h3{
+.homepage-promo .wk-h1, .homepage-promo .wk-h2,.homepage-promo .wk-h3,.homepage-promo .wk-h4,.homepage-promo .wk-h5{
 	-webkit-text-shadow: 0px 0px 7px #000;
     -text-shadow: 0px 0px 7px #000;
     text-shadow: 0px 0px 7px #000;
@@ -139,19 +144,27 @@ li{
     -khtml-text-shadow: 0px 0px 7px #000;
 }	
 .homepage-promo .wk-h1{
-	font-size:25px;
 	margin-bottom:0px;
 	line-height:1;
 }
 .homepage-promo .wk-h2{
-	font-size:18px;
 	font-family: Pluto Sans;
+	margin-top: 0px;
+}
+.homepage-promo .wk-h4{
+	margin-top: 0px;
+}
+.homepage-promo .wk-h5{
 	margin-top: 0px;
 }
 .homepage-promo .wk-overlay-panel{
 	padding: 35px 15px;
 }
 
+/* Widget Kit */
+.wk-h4, .wk-h5{
+	text-transform:none;
+}
 
 /* Department Footer */
 .dept-footer{
@@ -168,14 +181,6 @@ li{
 
 /* Breakpoint specific styles - Yootheme Breakpoints set to L-992px M-768px S-480px */
 
-@media (min-width:480px){
-	.homepage-promo .wk-h1{
-		font-size:35px;
-	}
-	.homepage-promo .wk-h2{
-		font-size:20px;	
-	}		
-}
 @media (min-width: 992px){
     .tm-page {width: 970px!important;
     }
@@ -193,12 +198,6 @@ li{
 	#google_translate_element{
 		text-align:center!important;
 	}
-	.homepage-promo .wk-h1{
-		font-size:45px;
-	}
-	.homepage-promo .wk-h2{
-		font-size:25px;	
-	}
 }
 @media (max-width: 991px) {
     .tm-page {
@@ -207,7 +206,7 @@ li{
 	.footer-social li img{
 		height: 28px;
 	}
-	.bottom-social ul {
+	.footer-social ul {
 		padding-left: 0px !important;
 	}
 	#site-nav-m{
