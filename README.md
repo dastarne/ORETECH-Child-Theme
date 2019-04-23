@@ -12,3 +12,4 @@ Text on HOMEPAGE must be set to "Small" in settings tab
 
 Page will left justify when installed. 
 
+test
