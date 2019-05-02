@@ -17,6 +17,9 @@ $parent_style = 'parent-style';
 		get_stylesheet_directory_uri() . '/style.css',
 		array( $parent_style ),
 		wp_get_theme()->get('Version') );
+	wp_enqueue_style (
+		'less-style',
+		get_stylesheet_directory_uri() . '/less/theme.ORETech.less');
 	}
 add_action( 'wp_enqueue_scripts', 'yootheme_child_theme_enqueue_child_styles' );
 
