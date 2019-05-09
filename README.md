@@ -11,4 +11,3 @@ H6 is used for the Sidebar "theme"
 Text on HOMEPAGE must be set to "Small" in settings tab
 
 Page will left justify when installed. 
-
