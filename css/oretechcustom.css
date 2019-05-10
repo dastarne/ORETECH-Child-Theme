@@ -90,6 +90,9 @@ li{
 .uk-article li{
 	list-style:square;
 }
+.uk-pagination li{
+	list-style:none;
+}
 
 /* Header */
 
