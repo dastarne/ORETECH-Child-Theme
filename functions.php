@@ -30,19 +30,19 @@ add_action( 'wp_enqueue_scripts', 'yootheme_child_theme_enqueue_child_styles' );
 	
 	// loads rinc assets
 	wp_enqueue_style( 'uncg-assets-common', $domain . "/rincuncg/css/common.min.css" );
-	// Secondary Min CSS needed for Top-Tier sites
+	// Determines CSS for primary/secondary sites
 		$site_IP = $_SERVER['SERVER_ADDR'];
 		if($site_IP==('152.13.30.204')||$site_IP==('152.13.30.122')||$site_IP ==('152.13.31.13')||$site_IP==('152.13.30.23')){
 			wp_enqueue_style( 'uncg-assets-secondary', $domain . "/rincuncg/css/secondary.min.css" );
+			wp_enqueue_style( 'ortech-custom-yootheme-css', $child_domain . '/css/oretechcustom_secondary.css');
+		} else {
+			wp_enqueue_style( 'ortech-custom-yootheme-css', $child_domain . '/css/oretechcustom.css');
 		}
 	//wp_enqueue_style( 'uncg-assets-hornav', $domain . "/rincuncg/css/horizontal-nav.min.css" );
 	//wp_enqueue_style( 'uncg-assets-print', $domain . "/rincuncg/css/print.min.css", "", "", "print" );
 	wp_enqueue_style( 'jquery-ui', "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css");
 	wp_enqueue_style( 'fastfonts', "//fast.fonts.com/cssapi/7860d9f9-615c-442e-ab9b-bd4fe7794024.css" );
 	wp_enqueue_style( 'uncgwp-style', get_stylesheet_uri() );
-	
-	// loads oretech css
-	wp_enqueue_style( 'ortech-custom-yootheme-css', $child_domain . '/css/oretechcustom.css');
 		
 	// load bootstrap js
 	wp_enqueue_script('uncgwp-bootstrapjs', $domain . '/rincuncg/js/bootstrap.min.js', array('jquery') );
