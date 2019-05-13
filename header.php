@@ -113,13 +113,7 @@ if ($view !== 'post' || ($view == 'post' && $post_settings['width'] != 'none')) 
     </head>
     <body <?php body_class($theme->get('body_class')->all()) ?>>
     	<!-- Start rincuncg heading -->
-      	<?php $site_IP = $_SERVER['SERVER_ADDR'];
-			  if($site_IP == ('152.13.30.204')||$site_IP ==('152.13.30.122')||$site_IP ==('152.13.31.13')||$site_IP==('152.13.30.23')){
-				  require_once('rincuncg/secondary-heading.php');
-			  } else {
-				  require_once('rincuncg/heading.php');
-			  }
-        ?>
+      	<?php require_once('rincuncg/heading.php');?>
       <!-- End rincuncg heading -->
 
         <?php if ($site['layout'] == 'boxed') : ?>
