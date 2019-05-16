@@ -150,10 +150,12 @@ li{
 .homepage-promo .wk-h1{
 	margin-bottom:0px;
 	line-height:1;
+	text-transform:uppercase;
 }
 .homepage-promo .wk-h2{
 	font-family: Pluto Sans;
 	margin-top: 0px;
+	text-transform:uppercase;
 }
 .homepage-promo .wk-h4{
 	margin-top: 0px;
