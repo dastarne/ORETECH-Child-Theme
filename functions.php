@@ -10,10 +10,10 @@ Note: this function loads the parent stylesheet before, then child theme stylesh
 require_once('theme/options/themeOptions.php');
 
 function yootheme_child_theme_enqueue_child_styles() {
-$parent_style = 'parent-style'; 
+$parent_style = 'parent-style';
 	//wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 
-		'child-style', 
+	wp_enqueue_style(
+		'child-style',
 		get_stylesheet_directory_uri() . '/style.css',
 		array( $parent_style ),
 		wp_get_theme()->get('Version') );
@@ -27,14 +27,19 @@ add_action( 'wp_enqueue_scripts', 'yootheme_child_theme_enqueue_child_styles' );
 	$child_domain = get_stylesheet_directory_uri();
 	// load bootstrap css
 	wp_enqueue_style( 'uncgwp-bootstrap', $domain . '/rincuncg/css/lib.min.css' );
-	
+
 	// loads rinc assets
 	wp_enqueue_style( 'uncg-assets-common', $domain . "/rincuncg/css/common.min.css" );
 	// Determines CSS for primary/secondary sites
-	
-	//secondary css for secondary-heading.php	
-	//wp_enqueue_style( 'uncg-assets-secondary', $domain . "/rincuncg/css/secondary.min.css" );
-	
+
+	// Secondary Min CSS needed for Top-Tier sites, header fixes added for secondary-heading
+		global $uncg_unit_options;
+		$uncg_unit_settings = get_option( 'uncg_unit_options', $uncg_unit_options );
+			  if($uncg_unit_settings['siteTier']=='primary'){
+				  wp_enqueue_style( 'uncg-assets-secondary', $domain . "/rincuncg/css/secondary.min.css" );
+				  wp_enqueue_style( 'ortech-custom-yootheme-css', $child_domain . '/css/headerfix.css');
+			  }
+
 	// loads oretech custom css
 	wp_enqueue_style( 'ortech-custom-yootheme-css', $child_domain . '/css/oretechcustom.css');
 	//wp_enqueue_style( 'uncg-assets-hornav', $domain . "/rincuncg/css/horizontal-nav.min.css" );
@@ -42,7 +47,7 @@ add_action( 'wp_enqueue_scripts', 'yootheme_child_theme_enqueue_child_styles' );
 	wp_enqueue_style( 'jquery-ui', "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css");
 	wp_enqueue_style( 'fastfonts', "//fast.fonts.com/cssapi/7860d9f9-615c-442e-ab9b-bd4fe7794024.css" );
 	wp_enqueue_style( 'uncgwp-style', get_stylesheet_uri() );
-		
+
 	// load bootstrap js
 	wp_enqueue_script('uncgwp-bootstrapjs', $domain . '/rincuncg/js/bootstrap.min.js', array('jquery') );
 	wp_enqueue_script( 'uncgwp-skip-link-focus-fix', $child_domain . '/includes/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -56,9 +61,9 @@ add_action( 'wp_enqueue_scripts', 'uncgwp_scripts' );
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	
+
 	'https://github.com/dastarne/ORETECH-Child-Theme',
-	
+
 __FILE__,
 
 	'yootheme-child-theme'
@@ -69,7 +74,7 @@ __FILE__,
 $url = get_site_url();
 if(substr( parse_url($url, PHP_URL_HOST), 0, 4) == "beta"){
 	//Optional for theme updater: Set the branch that contains the desired release release. This should be set to Beta on beta sites
-	$myUpdateChecker->setBranch('beta');		
+	$myUpdateChecker->setBranch('beta');
 } else {
 	$myUpdateChecker->setBranch('master');
 }
