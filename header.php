@@ -113,7 +113,14 @@ if ($view !== 'post' || ($view == 'post' && $post_settings['width'] != 'none')) 
     </head>
     <body <?php body_class($theme->get('body_class')->all()) ?>>
     	<!-- Start rincuncg heading -->
-      <?php require_once('rincuncg/heading.php');?>
+      <?php global $uncg_unit_options;
+      $uncg_unit_settings = get_option( 'uncg_unit_options', $uncg_unit_options );
+      if($uncg_unit_settings['siteTier']=='primary'){
+        require_once('rincuncg/secondary-heading.php');
+      } else {
+        require_once('rincuncg/heading.php');
+      }
+      ?>
       <!-- End rincuncg heading -->
 
         <?php if ($site['layout'] == 'boxed') : ?>

@@ -1,0 +1,14 @@
+/*Imports ORETech custom css, secondary-heading.php fix below*/
+@import "oretechcustom.css";
+
+#header-yellow-nav {
+	margin-top: -14px !important;
+}
+
+#navlist-yellow>li {
+	padding-top: 6px !important;
+}
+
+#navlist-yellow li#cl {
+	background-position: right -4px !important;
+}

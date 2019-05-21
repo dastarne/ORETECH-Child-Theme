@@ -80,7 +80,7 @@ li{
 
 .uk-article{
 	font-size:16px!important;
-	padding-right:10px!important;
+	padding-right:20px!important;
 	/* this fixes long links that were clearing their containers */
 	overflow-wrap: break-word;
     word-wrap: break-word;
@@ -89,6 +89,9 @@ li{
 }
 .uk-article li{
 	list-style:square;
+}
+.uk-pagination li{
+	list-style:none;
 }
 
 /* Header */
@@ -147,10 +150,12 @@ li{
 .homepage-promo .wk-h1{
 	margin-bottom:0px;
 	line-height:1;
+	text-transform:uppercase;
 }
 .homepage-promo .wk-h2{
 	font-family: Pluto Sans;
 	margin-top: 0px;
+	text-transform:uppercase;
 }
 .homepage-promo .wk-h4{
 	margin-top: 0px;
