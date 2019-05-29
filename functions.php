@@ -95,3 +95,12 @@ if(substr( parse_url($url, PHP_URL_HOST), 0, 4) == "beta"){
   }
   add_action( 'wp_head', 'ns_google_analytics', 10 );
 /* End GATID */
+
+// Add Privacy Policy Shortcode
+function privacy_policy() {
+	if (is_page($page='privacy-policy')) {
+		require_once STYLESHEETPATH . '/includes/privacy-policy.php';
+	}
+		
+}
+add_shortcode( 'privacy_policy', 'privacy_policy' );
