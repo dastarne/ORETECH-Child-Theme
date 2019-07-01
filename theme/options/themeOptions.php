@@ -72,8 +72,8 @@ if ( is_admin() ) : // Load only if we are viewing an admin page
 								<div class="clear"></div>
 					<div class="grid_7">
 						<label for="siteTier"><strong>Site Tier</strong></label><p style="line-height:1.8em;margin-left:15px;"> Site is currently set as <strong><?php echo $settings['siteTier'];?></strong>. To change tier, please select from the options below.</p>
-						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="primary" checked>Primary (Uses UNCG primary heading 'secondary-heading.php')<br>
-						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="secondary">Secondary (Uses UNCG secondary heading 'heading.php')<br>
+						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="primary" >Primary (Uses UNCG primary heading 'secondary-heading.php')<br>
+						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="secondary" checked>Secondary (Uses UNCG secondary heading 'heading.php')<br>
 					</div>
 								<div class="clear"></div><br>
 					<div class="grid_7">
