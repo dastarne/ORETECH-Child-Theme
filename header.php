@@ -7,6 +7,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
+global $theme;
+
 // Set view
 if (is_home()|| is_category() || is_tag()) {
     $view = 'blog';
@@ -14,18 +16,10 @@ if (is_home()|| is_category() || is_tag()) {
     $view = 'post';
 } else {
     $view = '';
-}
-
-// Parameter shortcuts
+}// Parameter shortcuts
 $site  = $theme->get('site', []);
 $blog_settings  = $theme->get('blog', []);
 $post_settings  = $theme->get('post', []);
-
-// Deprecated
-if ($site['boxed.padding'] && !isset($site['boxed.margin_top'], $site['boxed.margin_bottom'])) {
-    $site['boxed.margin_top'] = true;
-    $site['boxed.margin_bottom'] = true;
-}
 
 // Page
 $attrs_page = [];
@@ -95,9 +89,7 @@ if ($view !== 'post' || ($view == 'post' && $post_settings['width'] != 'none')) 
     $attrs_main_container['class'][] = 'uk-container';
     $attrs_main_container['class'][] = $view == 'blog' && $blog_settings['width'] ? "uk-container-{$blog_settings['width']}" : '';
     $attrs_main_container['class'][] = $view == 'post' && $post_settings['width'] ? "uk-container-{$post_settings['width']}" : '';
-}
-
-?>
+}?>
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
     <head>
@@ -122,8 +114,7 @@ if ($view !== 'post' || ($view == 'post' && $post_settings['width'] != 'none')) 
       }
       ?>
       <!-- End rincuncg heading -->
-
-        <?php if ($site['layout'] == 'boxed') : ?>
+<?php if ($site['layout'] == 'boxed') : ?>
         <div<?= get_attrs($attrs_page_container) ?>>
 
             <?php if ($attrs_image) : ?>

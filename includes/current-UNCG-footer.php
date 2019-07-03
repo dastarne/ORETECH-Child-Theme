@@ -51,7 +51,7 @@
         <div class="uk-margin-remove-top uk-margin-remove-bottom uk-grid-margin uk-margin-remove-top uk-margin-remove-bottom" uk-grid>
             <div class="uk-width-1-1@m">
                 <div class="uk-margin uk-margin-remove-top uk-margin-remove-bottom uk-text-center">
-                    <p>Copyright © <?php echo date("Y"); ?>. UNC Greensboro. All rights reserved.</p>
+                    <p>Copyright © <?php echo date("Y"); ?>. UNC Greensboro. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
                 </div>
             </div>
         </div>

@@ -93,6 +93,9 @@ li{
 .uk-pagination li{
 	list-style:none;
 }
+.uk-article a{
+	text-decoration:underline;
+}
 
 /* Header */
 

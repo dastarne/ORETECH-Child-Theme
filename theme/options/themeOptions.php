@@ -7,7 +7,12 @@ $uncg_unit_options = array(
                           <dd><strong>Location</strong> 1601 </dd>
                           <dd><strong>Mailing Address</strong> PO Box 26170, Greensboro, NC 27402-6170</dd>
                           <dd><strong>Telephone</strong> 336.334.5000</dd>
-                      </dl>'
+                      </dl>',
+    'siteTier' => 'primary',
+    'siteDomain' => 'research.uncg.edu',
+    'siteDepartment' => 'Research & Engagement',
+    'siteAdminEmail' => 'dastarne@uncg.edu'
+
 );
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
@@ -67,10 +72,24 @@ if ( is_admin() ) : // Load only if we are viewing an admin page
 								<div class="clear"></div>
 					<div class="grid_7">
 						<label for="siteTier"><strong>Site Tier</strong></label><p style="line-height:1.8em;margin-left:15px;"> Site is currently set as <strong><?php echo $settings['siteTier'];?></strong>. To change tier, please select from the options below.</p>
-						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="primary" checked>Primary (Uses UNCG primary heading 'secondary-heading.php')<br>
-						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="secondary">Secondary (Uses UNCG secondary heading 'heading.php')<br>
+						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="primary" >Primary (Uses UNCG primary heading 'secondary-heading.php')<br>
+						<input type="radio" id="siteTier" name="uncg_unit_options[siteTier]" value="secondary" checked>Secondary (Uses UNCG secondary heading 'heading.php')<br>
 					</div>
-								<div class="clear"></div>
+								<div class="clear"></div><br>
+					<div class="grid_7">
+						<label for="sitePrivacyPolicy"><strong>Privacy Policy Settings</strong></label>
+						<br>
+						<p style="line-height:1.8em;margin-left:15px;"> Enter your department and site domain name here.</p>
+						Department Domain: <strong><?php echo $settings['siteDomain'];?></strong><br>
+						<input type="text" id="siteDomain" name="uncg_unit_options[siteDomain]" value="<?php echo $settings['siteDomain'];?>"><br>
+						Department Name: <strong><?php echo $settings['siteDepartment'];?></strong><br>
+						<input type="text" id="siteDepartment" name="uncg_unit_options[siteDepartment]" value="<?php echo $settings['siteDepartment'];?>"><br>
+						Site Admin Email: <strong><?php echo $settings['siteAdminEmail'];?></strong><br>
+						<input type="text" id="siteAdminEmail" name="uncg_unit_options[siteAdminEmail]" value="<?php echo $settings['siteAdminEmail'];?>"><br>
+						Privacy policy page has to be titled "Privacy Policy" and has to have the following URL format:
+						yourdomain.uncg.edu/privacy-policy.<br>
+						Remember to add this shortcode to your privacy policy page: [privacy_policy]
+					</div>
 				</div>
 			</div>
             <p class="submit"><input type="submit" class="button-primary" value="Save Theme Options" /></p>
