@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * The main template file. ORE 2.0
  *
  * The most generic template file in the WordPress file hierarchy.
  * Used if WordPress cannot find any other matching template file.
