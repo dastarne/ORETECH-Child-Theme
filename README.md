@@ -11,3 +11,5 @@ H6 is used for the Sidebar "theme"
 Text on HOMEPAGE must be set to "Small" in settings tab
 
 Page will left justify when installed. 
+
+Images for Slideres and "featured images" on posts must be 1000px width min and 2:1 aspect ratio
