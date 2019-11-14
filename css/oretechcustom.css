@@ -49,9 +49,6 @@ body{
 	padding-left:0px!important;
 	padding-right:0px!important;
 }
-li{
-	list-style:none;
-}
 
 /* Sidebar */
 
@@ -74,13 +71,14 @@ li{
 .tm-sidebar ol, .tm-sidebar ul{
 	padding-left:0px!important;
 }
-
+.tm-sidebar li{
+	list-style:none;
+}
 
 /* Article */
 
 .uk-article{
 	font-size:16px!important;
-	padding-right:20px!important;
 	/* this fixes long links that were clearing their containers */
 	overflow-wrap: break-word;
     word-wrap: break-word;
