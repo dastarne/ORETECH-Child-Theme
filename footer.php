@@ -6,16 +6,17 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
-global $theme;
-$site = $theme->get('site', []);
 
-?>
-        <?php if (!$theme->get('builder')) : ?>
+namespace YOOtheme;
+
+list($config, $view) = app(Config::class, View::class);
+
+?><?php if (!$config('app.isBuilder')) : ?>
 
                         <?php if (is_active_sidebar('sidebar')) : ?>
                         </div>
 
-                        <?= get_view('sidebar') ?>
+                        <?= $view('~theme/templates/sidebar') ?>
 
                     </div>
                      <?php endif ?>
@@ -25,15 +26,13 @@ $site = $theme->get('site', []);
             <?php endif ?>
 
             <?php dynamic_sidebar("bottom:section") ?>
-            <?php require_once('includes/current-UNCG-footer.php');?>
-            <?/*= get_builder(json_encode($theme->get('footer.content')), ['prefix' => 'footer']) */?>
+		<?php require_once('includes/current-UNCG-footer.php');?>
+            <?= $view->builder(json_encode($config('~theme.footer.content')), ['prefix' => 'footer']) ?>
 
         </div>
 
-        <?php if ($site['layout'] == 'boxed') : ?>
+        <?php if ($config('~site.layout') == 'boxed') : ?>
         </div>
-        <?php endif ?>
-
-        <?php wp_footer() ?>
+        <?php endif ?><?php wp_footer() ?>
     </body>
 </html>
