@@ -8,68 +8,60 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy
  */
 
+namespace YOOtheme;
+
 get_header();
+
+$config = app(Config::class);
 
 ?>
 
 <?php if (have_posts()) :
 
     // Grid
-    if (($columns = $theme->get('blog.column', 1)) != 1) {
+    $columns = $config('~theme.blog.column', 1);
 
-        $attrs = [];
-        $options = [];
+    $attrs = [];
+    $options = [];
 
-        $options[] = $theme->get('blog.grid_masonry') ? 'masonry: true' : '';
-        $options[] = $theme->get('blog.grid_parallax') ? "parallax: {$theme->get('blog.grid_parallax')}" : '';
-        $attrs['uk-grid'] = implode(';', array_filter($options)) ?: true;
+    $options[] = $config('~theme.blog.grid_masonry') ? 'masonry: true' : '';
+    $options[] = $config('~theme.blog.grid_parallax') ? "parallax: {$config('~theme.blog.grid_parallax')}" : '';
+    $attrs['uk-grid'] = implode(';', array_filter($options)) ?: true;
 
-        // Columns
-        $breakpoint = $theme->get('blog.column_breakpoint');
-        $breakpoints = ['s', 'm', 'l', 'xl'];
-        $pos = array_search($breakpoint, $breakpoints);
+    // Columns
+    $breakpoint = $config('~theme.blog.grid_breakpoint');
+    $breakpoints = ['s', 'm', 'l', 'xl'];
+    $pos = array_search($breakpoint, $breakpoints);
 
-        if ($pos === false) {
-            $attrs['class'][] = "uk-child-width-1-{$columns}";
-        } else {
-            for ($i = $columns; $i > 0; $i--) {
-                if (($pos > -1) && ($i > 1)) {
-                    $attrs['class'][] = "uk-child-width-1-{$i}@{$breakpoints[$pos]}";
-                    $pos--;
-                }
+    if ($pos === false || $columns === 1) {
+        $attrs['class'][] = "uk-child-width-1-{$columns}";
+    } else {
+        for ($i = $columns; $i > 0; $i--) {
+            if (($pos > -1) && ($i > 1)) {
+                $attrs['class'][] = "uk-child-width-1-{$i}@{$breakpoints[$pos]}";
+                $pos--;
             }
         }
+    }
 
-        $attrs['class'][] = $theme->get('blog.column_gutter') ? 'uk-grid-large' : '';
+    $column_gap = $config('~theme.blog.grid_column_gap');
+    $row_gap = $config('~theme.blog.grid_row_gap');
 
+    if ($column_gap == $row_gap) {
+        $attrs['class'][] = $column_gap ? "uk-grid-{$column_gap}" : '';
+    } else {
+        $attrs['class'][] = $column_gap ? "uk-grid-column-{$column_gap}" : '';
+        $attrs['class'][] = $row_gap ? "uk-grid-row-{$row_gap}" : '';
     }
 
     ?>
 <h1><?php single_post_title(); ?></h1>
 
-    <?php if ($columns != 1) : ?>
     <div<?= get_attrs($attrs) ?>>
-    <?php endif ?>
-
-        <?php foreach ($wp_query->posts as $post) : ?>
-            <?php if ($columns != 1) : ?>
-            <div>
-                <?php
-                    setup_postdata($GLOBALS['post'] = $post);
-                    get_template_part('templates/post/content', get_post_format());
-                ?>
-            </div>
-            <?php else : ?>
-                <?php
-                    setup_postdata($GLOBALS['post'] = $post);
-                    get_template_part('templates/post/content', get_post_format());
-                ?>
-            <?php endif ?>
-        <?php endforeach ?>
-
-    <?php if ($columns != 1) : ?>
+        <?php while(have_posts()) : the_post() ?>
+        <div><?php get_template_part('templates/post/content', get_post_format()) ?></div>
+        <?php endwhile ?>
     </div>
-    <?php endif ?>
 
     <?php
 
