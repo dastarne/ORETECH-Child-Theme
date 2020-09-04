@@ -21,7 +21,7 @@ body{
 /* Page and Containers */
 
 .tm-page {
-	margin-bottom: 50px !important;
+	margin-bottom: 0px !important;
 }
 .tm-page-container {
 	background:#fff;
@@ -37,9 +37,9 @@ body{
 		height: 100% !important;
 	}
 	.tm-page {
-		-webkit-box-shadow: 0 0 26px 6px rgba(50,50,50,.75)!important;
-    	-moz-box-shadow: 0 0 26px 6px rgba(50,50,50,.75)!important;
-    	box-shadow: 0 0 26px 6px rgba(50,50,50,.75)!important;
+		-webkit-box-shadow: 0 26px 26px 5px rgba(50,50,50,.75)!important;
+    	-moz-box-shadow: 0 26px 26px 5px rgba(50,50,50,.75)!important;
+    	box-shadow: 0 26px 26px 5px rgba(50,50,50,.75)!important;
 		position: relative !important;
 		margin-top:148px !important;
 	}
@@ -179,6 +179,19 @@ body{
 }
 
 /* Footer */
+@media (min-width:768px){
+	#footer-content {
+		-webkit-box-shadow: 0 26px 26px 5px rgba(50,50,50,.75)!important;
+		-moz-box-shadow: 0 26px 26px 5px rgba(50,50,50,.75)!important;
+		box-shadow: 0 26px 26px 5px rgba(50,50,50,.75)!important;align-content
+	}
+}
+#footer-content {
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 47px;
+}
+
 .footer-social li{
 	display: inline;
 }
@@ -189,7 +202,7 @@ body{
 /* Breakpoint specific styles - Yootheme Breakpoints set to L-992px M-768px S-480px */
 
 @media (min-width: 992px){
-    .tm-page {width: 970px!important;
+    .tm-page, #footer-content {width: 970px!important;
     }
 	/* Campus Links */
 	#cl {
@@ -207,7 +220,7 @@ body{
 	}
 }
 @media (max-width: 991px) {
-    .tm-page {
+    .tm-page, #footer-content {
         max-width: 750px!important;
     }
 	.footer-social li img{
