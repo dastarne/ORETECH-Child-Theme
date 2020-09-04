@@ -20,6 +20,22 @@ $parent_style = 'parent-style';
 	}
 add_action( 'wp_enqueue_scripts', 'yootheme_child_theme_enqueue_child_styles' );
 
+/* Describe what the code snippet does so you can remember later on */
+add_action('wp_head', 'uncg_header');
+function uncg_header(){
+      global $uncg_unit_options;
+      $uncg_unit_settings = get_option( 'uncg_unit_options', $uncg_unit_options );
+      if($uncg_unit_settings['siteTier']=='primary'){
+        require_once('rincuncg/secondary-heading.php');
+      } else {
+        require_once('rincuncg/heading.php');
+      }
+};
+/* Describe what the code snippet does so you can remember later on */
+add_action('wp_footer', 'uncg_footer');
+function uncg_footer(){
+require_once('includes/current-UNCG-footer.php');
+};
 /* ORETECH custom Styling/scripts */
 
 	function uncgwp_scripts() {
